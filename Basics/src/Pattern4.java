@@ -1,33 +1,32 @@
 import java.util.Scanner;
 
-public class Pattren3 {
+public class Pattern4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//	       *
-//	       **
-//	      ***
-//	     ****
-//	    *****
-//	   ******
-//	  *******
-//	 ********
+//		*****
+//		 ****
+//		  ***
+//		   **
+//		    *
+		int n;
 		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
+		n = scan.nextInt();
+		
 		int nst = 1;
 		while(nst<=n) {
-			int cst = nst;
-			while(n-cst>0) {
+			int cst = n-nst+1;
+			int csp = nst-1;
+			while(csp>0) {
 				System.out.print(" ");
-				cst+=1;
+				csp-=1;
 			}
-			cst = nst;
 			while(cst>0) {
 				System.out.print("*");
 				cst-=1;
 			}
-			System.out.println();
 			nst+=1;
+			System.out.println();
 		}
 	}
 
