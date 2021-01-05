@@ -9,15 +9,15 @@ public class MaximumValueOfWindow {
 		
 		ArrayList<Integer> arr = new ArrayList<>();
 		
-		arr.add(1);
-		arr.add(2);
-		arr.add(3);
-		arr.add(1);
-		arr.add(4);
-		arr.add(5);
-		arr.add(2);
-		arr.add(3);
-		arr.add(6);
+		arr.add(91);
+		arr.add(82);
+		arr.add(73);
+		arr.add(64);
+		arr.add(55);
+		arr.add(46);
+		arr.add(37);
+		arr.add(28);
+		
 		int k = 3;
 		int i;
 		for(i=0;i<k;i++) {
@@ -31,13 +31,20 @@ public class MaximumValueOfWindow {
 		for(;i<arr.size();i++) {
 			
 			System.out.print(arr.get(q.peekFirst())+ " ");
+			if(!q.isEmpty()&& q.peekFirst()<=i-k) {
+				q.removeFirst();
+			}
+			
 			while(!q.isEmpty()&& arr.get(q.peekLast())<=arr.get(i)) {
 				q.removeLast();
 			}
 			q.addLast(i);
 			
 		}
+		
 		System.out.print(arr.get(q.peekFirst())+ " ");
+		System.out.println();
+		System.out.println(q.size());
 	}
 
 }
