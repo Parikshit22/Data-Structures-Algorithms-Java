@@ -3,18 +3,22 @@ public class Demo {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		StackUsing2Queue s = new StackUsing2Queue();
+		QueueUsing2Stack s = new QueueUsing2Stack();
 		for(int i=0;i<5;i++) {
-			s.push((i+1)*10);
+			s.add((i+1)*10);
 		}
 		
-		System.out.println();
 		
-		System.out.println(s.pop());
-		System.out.println(s.pop());
+		s.display();
 		System.out.println();
-		s.push(2);
-		System.out.println(s.top());
+		System.out.println(s.remove());
+		System.out.println();
+		System.out.println(s.remove());
+		System.out.println();
+		s.add(2);
+		s.display();
+		System.out.println();
+		System.out.println(s.peek());
 		
 	}
 
